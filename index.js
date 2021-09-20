@@ -43,10 +43,11 @@ app.get("/persone/search", (req, res) => {
   if (limit) {
     personeFiltrate = personeFiltrate.slice(0, Number(limit));
   }
-  if(personeFiltrate.length <1){
-    res.status(200).json({
-      code:200, data:[]
-    })
+  if (personeFiltrate.length < 1) {
+    return res.status(200).json({
+      code: 200,
+      data: [],
+    });
   }
 
   res.status(200).json(personeFiltrate);
